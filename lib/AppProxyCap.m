@@ -90,16 +90,28 @@ static CFDictionaryRef new_SCDynamicStoreCopyProxies (SCDynamicStoreRef store) {
 	[proxyPref release];
 	switch (type) {
 		case AppProxy_HTTP:
-			proxyPref = [[NSDictionary dictionaryWithObjectsAndKeys:
-							//[NSNumber numberWithInt:1], @"HTTPProxyType",
-							//[NSNumber numberWithInt:0], @"ProxyAutoConfigEnable",
-							[NSNumber numberWithInt:1], @"HTTPEnable",
-							host, @"HTTPProxy",
-							[NSNumber numberWithInt:port], @"HTTPPort",
-							[NSNumber numberWithInt:1], @"HTTPSEnable",
-							host, @"HTTPSProxy",
-							[NSNumber numberWithInt:port], @"HTTPSPort",
-							nil] retain];
+#pragma mark - BP Removed HTTPS from being set
+//			proxyPref = [[NSDictionary dictionaryWithObjectsAndKeys:
+//							//[NSNumber numberWithInt:1], @"HTTPProxyType",
+//							//[NSNumber numberWithInt:0], @"ProxyAutoConfigEnable",
+//							[NSNumber numberWithInt:1], @"HTTPEnable",
+//							host, @"HTTPProxy",
+//							[NSNumber numberWithInt:port], @"HTTPPort",
+//							[NSNumber numberWithInt:1], @"HTTPSEnable",
+//							host, @"HTTPSProxy",
+//							[NSNumber numberWithInt:port], @"HTTPSPort",
+//							nil] retain];
+            proxyPref = [[NSDictionary dictionaryWithObjectsAndKeys:
+                          //[NSNumber numberWithInt:1], @"HTTPProxyType",
+                          //[NSNumber numberWithInt:0], @"ProxyAutoConfigEnable",
+                          [NSNumber numberWithInt:1], @"HTTPEnable",
+                          host, @"HTTPProxy",
+                          [NSNumber numberWithInt:port], @"HTTPPort",
+                          /*[NSNumber numberWithInt:1], @"HTTPSEnable",
+                           host, @"HTTPSProxy",
+                           [NSNumber numberWithInt:port], @"HTTPSPort",*/
+                          nil] retain];
+#pragma mark -
 			/*
 			proxyType = kCFStreamPropertyHTTPProxy;
 			proxySetting = [NSMutableDictionary dictionaryWithObjectsAndKeys:
