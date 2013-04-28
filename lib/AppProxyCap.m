@@ -101,16 +101,17 @@ static CFDictionaryRef new_SCDynamicStoreCopyProxies (SCDynamicStoreRef store) {
 //							host, @"HTTPSProxy",
 //							[NSNumber numberWithInt:port], @"HTTPSPort",
 //							nil] retain];
-            proxyPref = [[NSDictionary dictionaryWithObjectsAndKeys:
-                          //[NSNumber numberWithInt:1], @"HTTPProxyType",
-                          //[NSNumber numberWithInt:0], @"ProxyAutoConfigEnable",
-                          [NSNumber numberWithInt:1], @"HTTPEnable",
-                          host, @"HTTPProxy",
-                          [NSNumber numberWithInt:port], @"HTTPPort",
+            
+			proxyPref = [[NSDictionary dictionaryWithObjectsAndKeys:
+							//[NSNumber numberWithInt:1], @"HTTPProxyType",
+							//[NSNumber numberWithInt:0], @"ProxyAutoConfigEnable",
+							[NSNumber numberWithInt:1], @"HTTPEnable",
+							host, @"HTTPProxy",
+							[NSNumber numberWithInt:port], @"HTTPPort",
                           /*[NSNumber numberWithInt:1], @"HTTPSEnable",
-                           host, @"HTTPSProxy",
+							host, @"HTTPSProxy",
                            [NSNumber numberWithInt:port], @"HTTPSPort",*/
-                          nil] retain];
+							nil] retain];
 #pragma mark -
 			/*
 			proxyType = kCFStreamPropertyHTTPProxy;
